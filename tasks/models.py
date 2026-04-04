@@ -7,6 +7,7 @@ class Task(models.Model):
         ('IN_PROGRESS', 'In Progress'),
         ('COMPLETED', 'Completed'),
     ]
+    
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
