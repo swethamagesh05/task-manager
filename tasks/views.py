@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
 from django.contrib.auth.decorators import login_required
 from django.utils.timezone import now
-
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 @login_required
 def dashboard(request):
@@ -46,3 +47,7 @@ def delete_task(request, id):
     task = get_object_or_404(Task, id=id, user=request.user)
     task.delete()
     return redirect('dashboard')
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')

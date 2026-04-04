@@ -7,7 +7,10 @@
 <body class="container mt-5" style="background-color: #60AFFF;">
 <p>Welcome, {{ request.user.username }}!</p>
 <h1 class="mb-4">Task Dashboard</h1>
-<a href="/logout/" class="btn btn-danger float-end">Logout</a>
+<form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
 <a href="/create/" class="btn btn-primary mb-3">➕ Create Task</a>
 
 <h2>Pending</h2>
