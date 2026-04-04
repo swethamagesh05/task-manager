@@ -29,6 +29,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['task-manager-8j1q.onrender.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://task-manager-8j1q.onrender.com"
+]
 
 # Application definition
 
