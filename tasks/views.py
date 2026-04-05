@@ -5,6 +5,7 @@ from django.utils.timezone import now
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 
+
 @login_required
 def dashboard(request):
     tasks = Task.objects.filter(user=request.user)
@@ -51,3 +52,4 @@ def delete_task(request, id):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
